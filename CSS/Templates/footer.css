@@ -1,0 +1,12 @@
+.footer .footer_container {
+  justify-content: center;
+  align-items: center;
+  padding: 0.7rem 0;
+  background-color: var(--black-color);
+}
+
+.footer .footer_container h4 {
+  font-family: pop-R;
+  color: var(--white-color);
+  user-select: none;
+}
