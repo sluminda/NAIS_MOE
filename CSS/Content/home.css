@@ -1,6 +1,6 @@
 .body {
   display: grid;
-  grid-template-columns: 5fr 2fr;
+  grid-template-columns: 6fr 4fr;
 }
 
 .body article {
@@ -9,11 +9,13 @@
   background-color: var(--white-color);
   align-items: center;
   justify-content: center;
+  padding: 2rem;
 }
 
 .body article .left_container {
   grid-column-start: 2;
   grid-column-end: 6;
+  max-width: 900px;
   width: auto;
   height: auto;
   background-color: rgb(174, 178, 185);
@@ -51,20 +53,152 @@
   border-top-left-radius: 10px;
 }
 
-.body article .left_container .article_one {
+/*
+------------------
+Article One & Two
+------------------
+*/
+.body article .left_container .article_one,
+.body article .left_container .article_two {
   padding: 2.5rem;
   align-items: center;
   justify-content: center;
 }
 
-.body article .left_container .article_one h3 {
+.body article .left_container .article_one h3,
+.body article .left_container .article_two h3,
+.body article .left_container .article_three_i h3 {
   text-align: center;
-  padding: 0 0 1rem 0;
+  /* margin: 0 0 1.3rem 0; */
+  font-family: pop-SB;
+  font-size: 1.3rem;
 }
 
-.body article .left_container .article_one p {
-  margin-bottom: 1rem;
+.body article .left_container .article_one p,
+.body article .left_container .article_two p {
   text-align: justify;
+}
+
+.body article .left_container .article_one p:nth-child(2),
+.body article .left_container .article_one p:nth-child(3),
+.body article .left_container .article_two p:nth-child(2),
+.body article .left_container .article_two p:nth-child(3) {
+  margin-bottom: 1rem;
+}
+
+/*
+----------------
+Article Three Location
+----------------
+*/
+.body article .left_container .article_three {
+  display: flex;
+  flex-direction: column;
+}
+
+.body article .left_container .article_three header {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 2rem;
+}
+
+.body article .left_container .article_three header h3 {
+  transform: translateY(-7px);
+}
+
+.body article .left_container .article_one header,
+.body article .left_container .article_two header {
+  grid-column: span 6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.5rem;
+}
+
+.body article .left_container .article_one header img,
+.body article .left_container .article_two header img,
+.body article .left_container .article_three_i header img {
+  width: 40px;
+  height: 40px;
+}
+
+.body article .left_container .article_one header h3,
+.body article .left_container .article_two header h3 {
+  display: flex;
+  align-items: center;
+  align-content: center;
+  transform: translateY(-5px);
+}
+
+/*
+----------------
+Article Three Contact Location
+----------------
+*/
+
+.body article .left_container .article_three_i {
+  row-gap: 2rem;
+}
+
+.body article .left_container .article_three_ii {
+  row-gap: 1rem;
+}
+
+.body article .left_container .article_three_i,
+.body article .left_container .article_three_ii {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  padding: 1.5rem 0 2rem 0;
+}
+
+.body article .left_container .article_three_i aside,
+.body article .left_container .article_three_ii aside {
+  display: flex;
+  justify-content: center;
+  align-self: self-start;
+  position: relative;
+  grid-column-start: 2;
+}
+
+.body article .left_container .article_three_i aside img,
+.body article .left_container .article_three_ii aside img {
+  width: 25px;
+}
+
+.body article .left_container .article_three_i p {
+  grid-column: span 3;
+}
+
+.body article .left_container .article_three_i .icon2 {
+  grid-column: span 6;
+}
+
+.body article .left_container .article_three_i iframe {
+  display: flex;
+  grid-column: span 6;
+  max-width: 350px;
+  min-width: auto;
+  justify-self: center;
+  border-radius: 10px;
+}
+
+/*
+----------------
+Article Three Contact
+----------------
+*/
+.body article .left_container .article_three_ii h4 {
+  grid-column: span 3;
+}
+
+.body article .left_container .article_three_ii p {
+  grid-column-start: 3;
+  grid-column-end: 6;
+}
+
+.body article .left_container .article_three_ii #break {
 }
 
 .body article .left_container .article_one .body article .body aside {
