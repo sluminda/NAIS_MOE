@@ -7,6 +7,7 @@
 
 .footer .footer_container h4 {
   font-family: pop-R;
+  font-weight: 200;
   color: var(--white-color);
   user-select: none;
 }

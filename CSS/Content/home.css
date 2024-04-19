@@ -22,19 +22,21 @@
   border-radius: 20px;
 }
 
-.body article .left_container nav {
+.body article .left_container .nav {
   display: flex;
   position: absolute;
   flex-direction: column-reverse;
   transform: rotate(180deg) translateX(43px) translateY(-20px);
+  justify-content: center;
+  align-items: center;
 }
 
-.body article .left_container nav li {
+.body article .left_container .nav li {
   list-style-type: none;
   display: flex;
 }
 
-.body article .left_container nav li a {
+.body article .left_container .nav > li a {
   text-decoration: none;
   color: var(--white-color);
   background-color: var(--black-color);
@@ -43,14 +45,47 @@
   text-orientation: sideways;
 }
 
-.body article .left_container nav li #one {
+.body article .left_container .nav > li #one {
   border-bottom-right-radius: 10px;
   border-bottom-left-radius: 10px;
 }
 
-.body article .left_container nav li #three {
+.body article .left_container .nav > li #three {
   border-top-right-radius: 10px;
   border-top-left-radius: 10px;
+}
+
+.body article .left_container .sub_nav {
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: center;
+  align-items: center;
+  outline: 2px solid;
+  width: 30px;
+  padding: 5px 0 3px 0;
+  outline-style: groove;
+  border-radius: 10px;
+  z-index: -1;
+}
+
+.sub_transform-show {
+  transform: translateY(7px);
+  transition: transform 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.sub_transform-hide {
+  transform: translateY(140px);
+  transition: transform 0.3s cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+.body article .left_container .sub_nav a {
+  background-color: var(--white-color);
+  padding: 0.3rem;
+}
+
+.body article .left_container .sub_nav img {
+  width: 25px;
+  transform: rotate(180deg);
 }
 
 /*
@@ -63,6 +98,8 @@ Article One & Two
   padding: 2.5rem;
   align-items: center;
   justify-content: center;
+  opacity: 1;
+  transition: opacity 0.3s ease-in;
 }
 
 .body article .left_container .article_one h3,
@@ -98,7 +135,7 @@ Article Three Location
 
 .body article .left_container .article_three header {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
   align-items: center;
   margin-top: 2rem;
 }
@@ -111,7 +148,7 @@ Article Three Location
 .body article .left_container .article_two header {
   grid-column: span 6;
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
   gap: 1rem;
   padding: 0.5rem;
@@ -119,6 +156,7 @@ Article Three Location
 
 .body article .left_container .article_one header img,
 .body article .left_container .article_two header img,
+.body article .left_container .article_three img,
 .body article .left_container .article_three_i header img {
   width: 40px;
   height: 40px;
@@ -163,8 +201,10 @@ Article Three Contact Location
 }
 
 .body article .left_container .article_three_i aside img,
-.body article .left_container .article_three_ii aside img {
+.body article .left_container .article_three_ii aside img,
+.body article .left_container .article_three_iii aside img {
   width: 25px;
+  height: 25px;
 }
 
 .body article .left_container .article_three_i p {
@@ -198,9 +238,48 @@ Article Three Contact
   grid-column-end: 6;
 }
 
-.body article .left_container .article_three_ii #break {
-}
-
 .body article .left_container .article_one .body article .body aside {
   background-color: var(--bg-color);
+}
+
+/*
+----------------
+Article Three Contact Form
+----------------
+*/
+
+.body article .left_container .article_three_iii {
+  padding-bottom: 2rem;
+}
+
+.body article .left_container .article_three_iii form {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  row-gap: 0.5rem;
+}
+
+.body article .left_container .article_three_iii form div {
+  display: flex;
+  flex-direction: column;
+  grid-column-start: 3;
+  grid-column-end: 9;
+}
+
+.body article .left_container .article_three_iii form input,
+.body article .left_container .article_three_iii form textarea {
+  grid-column-start: 3;
+  grid-column-end: 9;
+  border-radius: 5px;
+  outline: none;
+  border: none;
+  padding: 0.2rem 1rem;
+}
+
+.body article .left_container .article_three_iii form textarea {
+  resize: vertical;
+}
+
+.hidden {
+  opacity: 0;
+  transition: opacity 0.3s ease-in;
 }
